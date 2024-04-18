@@ -5,14 +5,23 @@ const validPositiveWholeDecimalNumber = /^(?:\d+|\d*\.\d+)$/;
 const validAlphabeticString = /^[A-Za-z]+$/;
 
 // Use the test method to check whether something matches the rules. 
-console.log(validWholeNumberRegEx.test(456))
+// console.log(validWholeNumberRegEx.test(456))
 
 // Create three functions which check user input for three pieces of data.
 // 1. Their name; 2. Their age; 3. Their height. 
 
+function nameChecker(name) {
+    return validAlphabeticString.test(name); 
+}
 
+function ageChecker(age) {
+    return validWholeNumberRegEx.test(age);
+}
 
+function heightChecker(height) {
+    return validPositiveWholeDecimalNumber.test(height);
+}
 
-// Other regex methods do exist such as match() (which looks for matching
-// characters) and replace() (which replaces characters), but test is 
-// probably the most commonly used and the one you should use here.
+console.log(nameChecker("Loren"));
+console.log(ageChecker("30"));
+console.log(heightChecker("5.10"));
